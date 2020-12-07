@@ -10,7 +10,7 @@ SCRIPT_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
 # Vars
 # ---------------------------------------------------\
 TIMEZONE_REGION="Asia"
-TIMEZONE_CITY="Almaty"
+TIMEZONE_CITY="Ho_Chi_Minh"
 SERVER_IP=$(hostname -I | cut -d' ' -f1)
 SERVER_NAME=$(hostname)
 DB_ZAB_PASS=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
@@ -31,8 +31,8 @@ rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.e
 yum-config-manager --enable rhel-7-server-optional-rpms
 
 # Remi repo (for new php releases)
-rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
-yum-config-manager --enable remi-php72
+#rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+#yum-config-manager --enable remi-php72
 
 # Install and configure Mariadb
 # ---------------------------------------------------\
